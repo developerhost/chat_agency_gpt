@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Chat from "./components/Chat";
 import InputForm from "./components/InputForm";
-import { Message } from "../types/custom";
+import { Message } from "./types/custom";
 import ThreeDotsLoader from "./components/ThreeDotsLoader";
 import { system_prompt } from "./constants/constants";
 
