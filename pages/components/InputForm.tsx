@@ -7,38 +7,47 @@ type InputFormProps = {
 
 const InputForm = ({ onSubmit }: InputFormProps) => {
   // input要素への参照を作成
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputMyRef = useRef<HTMLInputElement>(null);
+  const inputYourRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // input要素から直接値を取得
-    const inputValue = inputRef.current?.value;
+    const inputMyProfile = inputMyRef.current?.value;
+    const inputYourProfile = inputYourRef.current?.value;
 
-    if (inputValue) {
+    if (inputMyProfile && inputYourProfile) {
       // 親コンポーネントから提供されたonSubmit関数を介して送信されたメッセージを処理
       onSubmit({
         role: "user",
-        content: inputValue,
+        content: `# 私のプロフィール \n ${inputMyProfile}\n\n# 相手のプロフィール \n ${inputYourProfile}`,
       });
-      inputRef.current.value = "";
+      inputMyRef.current.value = "";
+      inputYourRef.current.value = "";
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center p-4 border-t border-gray-200"
+      className="items-center p-4 border-t border-gray-200"
     >
       <input
         type="text"
-        ref={inputRef}
-        className="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-        placeholder="メッセージを入力..."
+        ref={inputMyRef}
+        className="w-full flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        placeholder="自分のプロフィールをコピペ"
+      />
+      <input
+        type="text"
+        ref={inputYourRef}
+        className="w-full flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        placeholder="相手のプロフィールをコピペ"
       />
       <button
         type="submit"
-        className="ml-4 px-4 py-2 bg-blue-500 text-white rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        className="px-4 py-2 bg-blue-500 text-white rounded-lg focus:outline-none focus:ring focus:border-blue-300"
       >
         送信
       </button>
