@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
+import { OpenAIStream } from '../../utils/OpenAIStream'
 
 // 発行したAPI Keyを使って設定を定義
 const configuration = new Configuration({
@@ -35,9 +36,13 @@ export default async function handler(
       model: "gpt-3.5-turbo",
       messages: message,
       temperature: 0.7,
+      stream: true,
     });
     // GPTの返答を取得
     res.status(200).json({ result: completion.data.choices[0].message });
+
+    const stream = await OpenAIStream(completion)
+    return new Response(stream)
   } catch (error: any) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
