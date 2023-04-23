@@ -7,6 +7,11 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+export const config = {
+    runtime: 'edge',
+    regions: ['hnd1']
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
