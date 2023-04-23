@@ -1,7 +1,7 @@
 import { Avatar, Flex } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Message } from "../../types/custom";
+import { Message } from "../types/custom";
 
 const Chat = ({ content, role }: Message) => {
   const [chatMessage, setChatMessage] = useState(""); // 現在表示されているメッセージを保持

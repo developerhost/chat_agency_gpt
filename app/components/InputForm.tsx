@@ -1,5 +1,5 @@
 import React, { useRef, useState, } from "react";
-import { Message } from "../../types/custom";
+import { Message } from "../types/custom";
 
 type InputFormProps = {
   onSubmit: (message: Message) => Promise<void>; // onSUbmit関数は親コンポーネントで提供され、ユーザーがメッセージを送信すると呼び出される

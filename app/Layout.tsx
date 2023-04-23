@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import './globals.css'
 import Header from "./Header";
 import Main from "./Main";
 
