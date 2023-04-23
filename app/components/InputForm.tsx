@@ -41,13 +41,13 @@ const InputForm = ({ onSubmit }: InputFormProps) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="items-center p-4 border-t border-gray-200"
+      className="items-center p-4 border-t border-gray-200 text-center"
     >
     {inputVisible &&
       <input
         type="text"
         ref={inputMyRef}
-        className="w-full flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        className="w-full flex-grow px-4 py-2 my-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         placeholder="自分のプロフィールをコピペ"
       />
     }
@@ -55,7 +55,7 @@ const InputForm = ({ onSubmit }: InputFormProps) => {
       <input
         type="text"
         ref={inputYourRef}
-        className="w-full flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        className="w-full flex-grow px-4 py-2 my-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         placeholder="相手のプロフィールをコピペ"
       />
     }
@@ -63,7 +63,7 @@ const InputForm = ({ onSubmit }: InputFormProps) => {
       <input
         type="text"
         ref={inputMessageRef}
-        className="w-full flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        className="w-full flex-grow px-4 py-2 my-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         placeholder="相手のメッセージをコピペ"
       />
     }
