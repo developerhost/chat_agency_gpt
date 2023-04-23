@@ -11,7 +11,7 @@ const Chat = ({ content, role }: Message) => {
     if (currentIndex < content.length) {
       // メッセージを1文字ずつ表示する。アシスタントのメッセージのみで使用
       const timeoutId = setTimeout(() => {
-        // メッセージの次の文字を追加し、chatStringIndexを更新
+        // メッセージの次の文字を追加しchatStringIndexを更新
         setChatMessage((prevText) => prevText + content[currentIndex]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
       }, 80);

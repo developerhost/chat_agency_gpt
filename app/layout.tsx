@@ -4,7 +4,7 @@ import Main from "./Main";
 
 export const metadata = {
   title: "婚活GPT",
-  description: "ChatGPTがマッチングアプリのメッセージを作成してくれます。",
+  description: "ChatGPTがマッチングアプリのメッセージを作成してくれます",
 };
 
 export default function RootLayout({
